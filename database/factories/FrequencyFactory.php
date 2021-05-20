@@ -23,7 +23,6 @@ class FrequencyFactory extends Factory
     {
         return [
             'date' => $this->faker->date(),
-            'presence' => $this->faker->boolean(),
         ];
     }
 }

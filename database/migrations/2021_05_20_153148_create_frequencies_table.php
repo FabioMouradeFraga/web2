@@ -17,7 +17,6 @@ class CreateFrequenciesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->date('date');
-            $table->boolean('presence');
         });
     }
 
