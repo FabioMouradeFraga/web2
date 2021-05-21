@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Grade extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+    ];
+
+    public function frequencies() {
+        return $this->hasMany(Frequency::class, 'grade_id');
+    }
+    
+    public function owner() {
+    	return $this->belongsTo(User::class, 'user_id');
+    }
 }

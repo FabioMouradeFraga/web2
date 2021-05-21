@@ -13,6 +13,11 @@ class FrequencySeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Frequency::factory(5)->create();
+        for ($i = 1; $i < 6; $i++) {
+        	\App\Models\Frequency::factory(1)->create([
+                'user_id' => \App\Models\User::all()->random(),
+                'grade_id' => \App\Models\Grade::all()->random(),
+        	]);
+    	}
     }
 }

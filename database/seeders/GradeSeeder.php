@@ -12,7 +12,11 @@ class GradeSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        \App\Models\Grade::factory(5)->create();
+    {       
+        for ($i = 1; $i < 6; $i++) {
+            \App\Models\Grade::factory(1)->create([
+                'user_id' => \App\Models\User::all()->random(),
+            ]);
+        }
     }
 }

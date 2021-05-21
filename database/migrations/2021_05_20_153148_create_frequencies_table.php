@@ -17,6 +17,8 @@ class CreateFrequenciesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->date('date');
+            $table->integer('user_id');
+            $table->integer('grade_id');
         });
     }
 

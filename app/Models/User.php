@@ -40,4 +40,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function grades() {
+        return $this->hasMany(Grade::class, 'user_id');
+    }
+
+    public function students() {
+        return $this->hasMany(Student::class, 'user_id');
+    }
+
+    public function frequencies() {
+        return $this->hasMany(Frequency::class, 'user_id');
+    }
 }
