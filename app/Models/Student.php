@@ -15,6 +15,8 @@ class Student extends Model
         'email',
         'address',
         'cpf',
+        'user_id',
+        'grade_id',
     ];
 
     public function owner() {

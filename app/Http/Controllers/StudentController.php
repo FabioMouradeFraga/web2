@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class StudentController extends Controller
 {
@@ -35,7 +37,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::create([
+            'name' => $request->name,
+            'birth' => $request->birth,
+            'email' => $request->email,
+            'address' => $request->address,
+            'cpf' => $request->cpf,
+            'user_id' => Auth::user()->id,
+            'grade_id' => $request->grade
+        ]);
+
+        return Redirect::route('dashboard');
     }
 
     /**

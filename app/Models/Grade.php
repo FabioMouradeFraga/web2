@@ -11,6 +11,7 @@ class Grade extends Model
 
     protected $fillable = [
         'name',
+        'user_id',
     ];
 
     public function frequencies() {

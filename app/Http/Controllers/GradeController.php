@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Grade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class GradeController extends Controller
 {
@@ -35,7 +37,12 @@ class GradeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Grade::create([
+            'name' => $request->name,
+            'user_id' => Auth::user()->id
+        ]);
+
+        return Redirect::route('dashboard');
     }
 
     /**
