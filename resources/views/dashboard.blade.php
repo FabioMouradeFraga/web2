@@ -55,7 +55,7 @@
                         <label class="block text-gray-700 text-sm font-semibold mb-2" for="address">
                             Endereço:
                         </label>
-                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="address" type="text" name="address" placeholder="Exemplo: Runa Lino nº 50"/>
+                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="address" type="text" name="address" placeholder="Exemplo: Rua Lino nº 50"/>
                         </div>
                         <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-semibold mb-2" for="cpf">
