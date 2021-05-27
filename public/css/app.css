@@ -187943,3 +187943,7 @@ select {
   }
 }
 
+.required_field:after{
+        content: '*';
+        color: red;
+}

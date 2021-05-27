@@ -1,10 +1,3 @@
-<style>
-    .required_field:after{
-        content: '*';
-        color: red;
-    }
-</style>
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -18,13 +11,13 @@
 
                 <div class="w-full">
                     <h2 class="px-6 pt-4 font-semibold text-center">Criar turma</h2>
-                    <form class="bg-white shadow-md rounded px-6 pt-6 pb-8 mb-4" method="POST" action="{{ route('create_grade') }}">
+                    <form class="bg-white rounded px-6 pt-6 pb-8 mb-4" method="POST" action="{{ route('create_grade') }}">
                         @csrf
                         <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-semibold mb-2 required_field" for="username">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2 required_field" for="name">
                             Nome:
                         </label>
-                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="username" type="text" name="name" placeholder="Exemplo: Web"/>
+                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="name" type="text" name="name" placeholder="Exemplo: Web"/>
                         </div>
                         <div class="flex items-center justify-between">
                         <x-button>
@@ -33,43 +26,45 @@
                         </div>
                     </form>
                 </div>
+            </div>
 
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="w-full">
                     <h2 class="px-6 pt-4 font-semibold text-center">Registrar aluno</h2>
-                    <form class="bg-white shadow-md rounded px-6 pt-6 pb-8 mb-4" method="POST" action="{{ route('register_student') }}">
+                    <form class="bg-white rounded px-6 pt-6 pb-8 mb-4" method="POST" action="{{ route('register_student') }}">
                         @csrf
                         <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-semibold mb-2 required_field" for="username">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2 required_field" for="name">
                             Nome:
                         </label>
-                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="username" type="text" name="name" placeholder="Exemplo: Fábio Moura de Fraga"/>
+                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="name" type="text" name="name" placeholder="Exemplo: Fábio Moura de Fraga"/>
                         </div>
                         <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="username">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="birth">
                             Data de nascimento:
                         </label>
-                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="username" type="date" name="birth"/>
+                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="birth" type="date" name="birth"/>
                         </div>
                         <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="username">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="email">
                             E-mail:
                         </label>
-                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="username" type="email" name="email" placeholder="Exemplo: fabio@email.com"/>
+                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="email" type="email" name="email" placeholder="Exemplo: fabio@email.com"/>
                         </div>
                         <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="username">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="address">
                             Endereço:
                         </label>
-                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="username" type="text" name="address" placeholder="Exemplo: Runa Lino nº 50"/>
+                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="address" type="text" name="address" placeholder="Exemplo: Runa Lino nº 50"/>
                         </div>
                         <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="username">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2" for="cpf">
                             CPF:
                         </label>
-                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="username" type="text" name="cpf" placeholder="Exemplo: 999.999.999-99" minlength="11" maxlength="14"/>
+                        <x-input class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" id="cpf" type="text" name="cpf" placeholder="Exemplo: 999.999.999-99" minlength="11" maxlength="14"/>
                         </div>
                         <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-semibold mb-2 required_field" for="username">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2 required_field" for="grade">
                             Turma:
                         </label>
                         <select class="shadow appearance-none border rounded w-full py-2 px-3 -mb-1 text-gray-700 leading-tight  focus:outline-none focus:shadow-outline" name="grade" id="grade">
@@ -77,7 +72,7 @@
                             <option value="{{ $grade->id }}">{{ $grade->name }}</option>
                         @endforeach
                         </select>
-                        </dir>
+                        </div>
                         <div class="flex items-center justify-between mt-5">
                         <x-button>
                             Salvar
@@ -85,7 +80,9 @@
                         </div>
                     </form>
                 </div>
+            </div>
 
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="w-full">
                     <h2 class="px-6 py-4 font-semibold text-center">Seus alunos</h2>
                     <table class="rounded m-5 w-5/6 mx-auto bg-gray-200">
@@ -107,8 +104,8 @@
                         @endforeach
                     </table>
                 </div>
-
             </div>
+
         </div>
     </div>
 </x-app-layout>
