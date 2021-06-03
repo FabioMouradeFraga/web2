@@ -22,7 +22,7 @@ class CreateStudentsTable extends Migration
             $table->string('address')->nullable();
             $table->string('cpf', 14)->nullable();
             $table->integer('user_id');
-            $table->integer('grade_id');
+            $table->integer('grade_id')->nullable();;
         });
     }
 
