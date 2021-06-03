@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class GradeController extends Controller
@@ -85,8 +86,14 @@ class GradeController extends Controller
      * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Grade $grade)
+    public function destroy($grade)
     {
-        //
+        if (Grade::find($grade)->user_id == Auth::user()->id)
+        {
+            DB::table('students')->where('grade_id', $grade)->update(['grade_id' => null]);
+            DB::table('grades')->where('id', $grade)->delete();
+        }
+
+        return Redirect::route('dashboard');
     }
 }

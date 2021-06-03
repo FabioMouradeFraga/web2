@@ -25,6 +25,10 @@ Route::get('/dashboard', function () {
 
 Route::post('/grade/store', [GradeController::class, 'store'])->middleware(['auth'])->name('create_grade');
 
+Route::get('/grade/remove/{id}', [GradeController::class, 'destroy'])->middleware(['auth'])->name('remove_grade');
+
 Route::post('/student/store', [StudentController::class, 'store'])->middleware(['auth'])->name('register_student');
+
+Route::get('/student/remove/{id}', [StudentController::class, 'destroy'])->middleware(['auth'])->name('remove_student');
 
 require __DIR__.'/auth.php';

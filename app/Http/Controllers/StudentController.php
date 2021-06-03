@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class StudentController extends Controller
@@ -90,8 +91,12 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($student)
     {
-        //
+        if (Student::find($student)->user_id == Auth::user()->id) {
+            DB::table('students')->where('id', $student)->delete();
+        }
+
+        return Redirect::route('dashboard');
     }
 }
